@@ -211,7 +211,7 @@ class ControllerPaymentCoinToPay extends Controller {
         
         function getMerchantCoins($merchantId)
         {
-            $url = 'http://cointopay.com/CloneMasterTransaction?MerchantID='.$merchantId.'&output=json';
+            $url = 'https://cointopay.com/CloneMasterTransaction?MerchantID='.$merchantId.'&output=json';
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 3);
             $output = curl_exec($ch);
