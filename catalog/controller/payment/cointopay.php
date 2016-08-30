@@ -10,10 +10,10 @@ class ControllerPaymentCoinToPay extends Controller {
                 if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
                     
                         //$this->response->redirect($this->c2pCreateInvoice($this->request->post));
-                        $respons_url_with_https = trim($this->c2pCreateInvoice($this->request->post)).'&output=json';
+                        
 
-                        $remove_https = ltrim($respons_url_with_https, 'https');
-                        $url = 'http'.$remove_https;
+                        
+                        $url = trim($this->c2pCreateInvoice($this->request->post)).'&output=json';
                         $ch = curl_init($url);
                         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 3);
                         $output = curl_exec($ch);
